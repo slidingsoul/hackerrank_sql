@@ -1,4 +1,4 @@
-# african cities
+-- african cities
 
 SELECT cit.NAME
 FROM CITY cit
