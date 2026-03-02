@@ -1,0 +1,14 @@
+-- weather observation station 18
+
+SET @a = SELECT MIN(LAT_N) FROM STATION;
+SET @b = SELECT MIN(LONG_W) FROM STATION;
+
+SET @c = SELECT MAX(LAT_N) FROM STATION;
+SET @d = SELECT MAX(LONG_W) FROM STATION;
+
+SELECT ROUND(ABS(@a - @c) + ABS(@b - @d), 4);
+
+-- alternative
+
+SELECT ROUND(ABS(MIN(LAT_N) - MAX(LAT_N)) + ABS(MIN(LONG_W) - MAX(LONG_W)), 4)
+FROM STATION
